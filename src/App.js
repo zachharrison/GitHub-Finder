@@ -38,12 +38,6 @@ const App = () => {
     setLoading(false);
   };
 
-  // CLEAR USERS FROM STATE
-  const clearUsers = () => {
-    setUsers([]);
-    setLoading(false);
-  };
-
   // ERROR VALIDATION FOR SEARCH
   const showAlert = (msg, type) => {
     setAlert({ msg, type })
@@ -61,8 +55,6 @@ const App = () => {
               <Route exact path='/' render={props => (
                 <Fragment>
                   <Search 
-                    clearUsers={clearUsers}
-                    showClear={users.length > 0 ? true : false}
                     setAlert={showAlert}
                   />
                   <Users 
